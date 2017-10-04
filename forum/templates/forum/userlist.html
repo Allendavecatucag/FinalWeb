@@ -16,7 +16,7 @@
             <div class="card-content">
                 <ul class="flow-text">
                     {% for usr in users %}
-                        {% if usr.username == 'Phixen' %}
+                        {% if usr.username == 'Admin' %}
                         <li><a class="red-text darken-1" href="{% url 'forum:user' usr.username %}">{{ usr.username }}</a> ({{ usr.post_set.count }})</li>
                         <br/>
                         {% else %}
