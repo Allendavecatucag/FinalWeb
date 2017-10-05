@@ -16,3 +16,7 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "forums.settings")
 
 application = get_wsgi_application()
 # application = Cling(get_wsgi_application())
+
+
+from whitenoise.django import DjangoWhiteNoise
+application = DjangoWhiteNoise(application)
