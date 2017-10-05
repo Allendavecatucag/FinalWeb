@@ -152,6 +152,11 @@ if os.getcwd() == '/app':
 
     # Update database configuration with $DATABASE_URL.
     import dj_database_url
+    db_from_env = dj_database_url.config()
+    DATABASES['default'].update(db_from_env)
+    
+    # Update database configuration with $DATABASE_URL.
+    import dj_database_url
     db_from_env = dj_database_url.config(conn_max_age=500)
     DATABASES['default'].update(db_from_env)
 
@@ -162,7 +167,7 @@ if os.getcwd() == '/app':
     PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
     STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
-    
+
     STATIC_URL = '/static/'
 
     # Extra places for collectstatic to find static files.
