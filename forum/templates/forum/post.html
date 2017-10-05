@@ -7,7 +7,7 @@
       <div class="col s12">
           <div class="card green lighten-5 hoverable">
               <div class="card-content">
-                  {% if post.author.username == 'Admin' %}
+                  {% if post.author.username == 'admin' %}
                   <a href="{% url 'forum:post' post.id %}" class="card-title red-text"><b>{{ post.title }}</b></a>
                   <br/>
                   <small>{{ post.date_added }} | <a class="red-text darken-1" href="{% url 'forum:user' post.author.username %}">{{ post.author }}</a></small>
@@ -18,7 +18,7 @@
                   {% endif %}
                   <p class="flow-text">{{ post.text|linebreaks }}</p>
                   <br/><br/>
-                  {% if user == post.author or user.username == 'Admin' %}
+                  {% if user == post.author or user.username == 'admin' %}
                   <div class="card-action">
                       <a class="green-text text-accent-4" href="{% url 'forum:edit_post' post.id %}">Edit Post</a>
                       <a class="green-text text-accent-4" href="{% url 'forum:edit_post' post.id %}">Delete Post</a>
