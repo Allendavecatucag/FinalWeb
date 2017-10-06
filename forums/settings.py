@@ -150,15 +150,15 @@ if os.getcwd() == '/app':
     os.path.join(BASE_DIR, 'static'),
     )
 
-    # # Update database configuration with $DATABASE_URL.
-    # import dj_database_url
-    # db_from_env = dj_database_url.config()
-    # DATABASES['default'].update(db_from_env)
+    # Update database configuration with $DATABASE_URL.
+    import dj_database_url
+    db_from_env = dj_database_url.config()
+    DATABASES['default'].update(db_from_env)
     
-    # # Update database configuration with $DATABASE_URL.
-    # import dj_database_url
-    # db_from_env = dj_database_url.config(conn_max_age=500)
-    # DATABASES['default'].update(db_from_env)
+    # Update database configuration with $DATABASE_URL.
+    import dj_database_url
+    db_from_env = dj_database_url.config(conn_max_age=500)
+    DATABASES['default'].update(db_from_env)
 
 
     # Static files (CSS, JavaScript, Images)
