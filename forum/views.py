@@ -90,5 +90,19 @@ def userlist(request):
     return render(request, 'forum/userlist.html', context)
 
 def about(request):
-   
-    return render(request, 'forum/about.html')
+   return render(request, 'forum/about.html')
+
+
+# def deleteConfess(request, post_id):
+#     if Post.objects.filter(id=post_id).update(active='0'):
+#         return redirect('/index', message.success(request,'The confess was successfully deleted.','alert-success'))
+#     else:
+#         return redirect('/index', message.danger(request,'Cannot delete the confess.','alert-success'))
+
+
+def deleteConfess(request, post_id):
+    contactToDelete = Post.objects.get(pk=post_id)
+    contactToDelete.delete()
+    return render(request, 'forum/new_post.html')
+
+    
