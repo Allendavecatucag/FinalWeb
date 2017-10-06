@@ -3,6 +3,10 @@ from django.http import HttpResponseRedirect, Http404
 from django.core.urlresolvers import reverse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from django.contrib.auth.admin import UserAdmin as AuthUserAdmin
+from .models import User
+
 from .models import Post
 from .forms import PostForm, CommentForm
 from django.contrib.auth.models import User
@@ -92,12 +96,6 @@ def userlist(request):
 def about(request):
    return render(request, 'forum/about.html')
 
-
-# def deleteConfess(request, post_id):
-#     if Post.objects.filter(id=post_id).update(active='0'):
-#         return redirect('/index', message.success(request,'The confess was successfully deleted.','alert-success'))
-#     else:
-#         return redirect('/index', message.danger(request,'Cannot delete the confess.','alert-success'))
 
 
 def deleteConfess(request, post_id):
