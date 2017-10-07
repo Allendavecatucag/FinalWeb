@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app_with_user_relation',
-    'app_name'
+    
     
     # My Apps
     'forum',
