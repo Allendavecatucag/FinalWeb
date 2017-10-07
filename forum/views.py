@@ -101,4 +101,8 @@ def deleteConfess(request, post_id):
     contactToDelete.delete()
     return render(request, 'forum/new_post.html')
 
-    
+def get_object(self, id):
+    try:
+        return Comment.objects.get(pk=id)
+    except Comment.DoesNotExist:
+        return False
