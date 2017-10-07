@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Post
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+# from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth.admin import UserAdmin as AuthUserAdmin
 from .models import Meta.model
 # Register your models here.
