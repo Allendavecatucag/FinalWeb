@@ -3,9 +3,7 @@ from django.http import HttpResponseRedirect, Http404
 from django.core.urlresolvers import reverse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from django.contrib.auth.admin import UserAdmin as AuthUserAdmin
-from .models import User
+
 
 from .models import Post
 from .forms import PostForm, CommentForm
