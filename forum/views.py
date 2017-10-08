@@ -3,17 +3,17 @@ from django.http import HttpResponseRedirect, Http404
 from django.core.urlresolvers import reverse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
+
+
+
 from .models import Post
 from .forms import PostForm, CommentForm
 from django.contrib.auth.models import User
 
 
 def index(request):
-    try:
+    
     admin = User.objects.get(id=2)
-    except MyModel.DoesNotExist:
-    raise Http404("No MyModel matches the given query.")
-    # admin = User.objects.get(id=2)
     tops = Post.objects.filter(author=admin)
     post_list = Post.objects.exclude(author=admin).order_by('-date_added')
     paginator = Paginator(post_list, 5)
