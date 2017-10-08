@@ -17,10 +17,10 @@ def index(request):
     except User.DoesNotExist:
         pass
     # admin = User.objects.get(id=2)
-    tops = Post.objects.filter(author=admin)
-    post_list = Post.objects.exclude(author=admin).order_by('-date_added')
-    paginator = Paginator(post_list, 5)
-    page = request.GET.get('page')
+        tops = Post.objects.filter(author=admin)
+        post_list = Post.objects.exclude(author=admin).order_by('-date_added')
+        paginator = Paginator(post_list, 5)
+        page = request.GET.get('page')
 
     try:
         posts = paginator.page(page)
