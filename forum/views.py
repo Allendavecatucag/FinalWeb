@@ -11,7 +11,7 @@ from django.contrib.auth.models import User
 
 
 def index(request):    
-    admin = User.objects.get(id=2)
+    admin = User.objects.get(id=3)
     tops = Post.objects.filter(author=admin)
     post_list = Post.objects.exclude(author=admin).order_by('-date_added')
     paginator = Paginator(post_list, 5)
