@@ -15,7 +15,7 @@ def index(request):
     try:
         admin = User.objects.get(id=2)
     except MyModel.DoesNotExist:
-    raise Http404("No MyModel matches the given query.")
+        raise Http404("No MyModel matches the given query.")
 
     # admin = User.objects.get(id=2)
     tops = Post.objects.filter(author=admin)
