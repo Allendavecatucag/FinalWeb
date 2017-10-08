@@ -15,7 +15,7 @@ def index(request):
     try:
         admin = User.objects.get(id=2)
     except World.DoesNotExist:
-    pass
+        pass
     # admin = User.objects.get(id=2)
     tops = Post.objects.filter(author=admin)
     post_list = Post.objects.exclude(author=admin).order_by('-date_added')
