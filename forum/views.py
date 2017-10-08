@@ -14,7 +14,7 @@ from django.contrib.auth.models import User
 def index(request):
     try:
         admin = User.objects.get(id=2)
-    except MyModel.DoesNotExist:
+    except PageNotAnInteger:
         raise Http404("No MyModel matches the given query.")
 
     # admin = User.objects.get(id=2)
