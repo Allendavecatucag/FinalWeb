@@ -3,22 +3,20 @@ from django.http import HttpResponseRedirect, Http404
 from django.core.urlresolvers import reverse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-
-
 from .models import Post
 from .forms import PostForm, CommentForm
 from django.contrib.auth.models import User
 
 
 def index(request):    
-    admin = User.objects.get(id=2)
-    tops = Post.objects.filter(author=admin)
-    post_list = Post.objects.exclude(author=admin).order_by('-date_added')
+    # admin = User.objects.get(id=2)
+    # tops = Post.objects.filter(author=admin)
+    # post_list = Post.objects.exclude(author=admin).order_by('-date_added')
     paginator = Paginator(post_list, 5)
     page = request.GET.get('page')
 
     try:
-        posts = paginator.page(page)
+        posts = paginator.page(page) 
     except PageNotAnInteger:
         posts = paginator.page(1)
     except EmptyPage:
