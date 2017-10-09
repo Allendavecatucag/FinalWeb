@@ -1,2 +1,1 @@
-web: gunicorn forums.wsgi --log-file -
-worker: python worker.py
+web: python manage.py runserver 0.0.0.0:5000
