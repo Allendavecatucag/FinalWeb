@@ -13,8 +13,8 @@ def index(request):
     # admin2 = User.objects.get(id=2)
     # tops = Post.objects.filter(author=admin2)
     # post_list = Post.objects.exclude(author=admin2).order_by('-date_added')
-    # paginator = Paginator(post_list, 5)
-    # page = request.GET.get('page')
+    paginator = Paginator(post_list, 5)
+    page = request.GET.get('page')
 
     try:
         posts = paginator.page(page) 
