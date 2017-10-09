@@ -9,9 +9,9 @@ from django.contrib.auth.models import User
 
 
 def index(request):    
-    admin = User.objects.get(username=admin)
-    tops = Post.objects.filter(author=admin)
-    post_list = Post.objects.exclude(author=admin).order_by('-date_added')
+    admin2 = User.objects.get(username=admin)
+    tops = Post.objects.filter(author=admin2)
+    post_list = Post.objects.exclude(author=admin2).order_by('-date_added')
     paginator = Paginator(post_list, 5)
     page = request.GET.get('page')
 
