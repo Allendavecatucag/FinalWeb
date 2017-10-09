@@ -9,21 +9,21 @@ from django.contrib.auth.models import User
 
 
 def index(request):    
-    # admin = User.objects.get(id=2)
-    # tops = Post.objects.filter(author=admin)
-    # post_list = Post.objects.exclude(author=admin).order_by('-date_added')
-    # paginator = Paginator(post_list, 5)
-    # page = request.GET.get('page')
+    admin = User.objects.get(username='admin')
+    tops = Post.objects.filter(author=admin)
+    post_list = Post.objects.exclude(author=admin).order_by('-date_added')
+    paginator = Paginator(post_list, 5)
+    page = request.GET.get('page')
 
-    # try:
-    #     posts = paginator.page(page) 
-    # except PageNotAnInteger:
-    #     posts = paginator.page(1)
-    # except EmptyPage:
-    #     posts = paginator.page(paginator.num_pages)
+    try:
+        posts = paginator.page(page) 
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
     
-    # page_numbers = [x for x in range(1, posts.paginator.num_pages+1)]
-    # context = {'post_list': post_list, 'tops': tops, 'posts': posts, 'page_numbers': page_numbers}
+    page_numbers = [x for x in range(1, posts.paginator.num_pages+1)]
+    context = {'post_list': post_list, 'tops': tops, 'posts': posts, 'page_numbers': page_numbers}
     return render(request, 'forum/index.html', context)
 
 
