@@ -2,14 +2,15 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect, Http404
 from django.core.urlresolvers import reverse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-
 from .models import Post
 from .forms import PostForm, CommentForm
 from django.contrib.auth.models import User
 
 
+
+
 def index(request):    
-    admin2 = User.objects.get(id=2)
+    # admin2 = User.objects.get(id=2)
     tops = Post.objects.filter(author=admin2)
     post_list = Post.objects.exclude(author=admin2).order_by('-date_added')
     paginator = Paginator(post_list, 5)
